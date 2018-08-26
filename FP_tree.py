@@ -140,7 +140,8 @@ class FPTree:
                 for other_items in combinations(cond_pattern_base.keys(), size):
                     freq_pattern = tuple([item] + [i for i in other_items])
                     self.freq_pattern_frequency_[freq_pattern] = min([cond_pattern_base[i] for i in other_items])
-        self.freq_pattern_frequency_.update(self.item_frequency_)
+        for item, frequency in self.item_frequency_.items():
+            self.freq_pattern_frequency_[tuple(item)] = frequency
 
 
 class Node:
