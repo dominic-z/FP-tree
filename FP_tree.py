@@ -141,7 +141,7 @@ class FPTree:
                     freq_pattern = tuple([item] + [i for i in other_items])
                     self.freq_pattern_frequency_[freq_pattern] = min([cond_pattern_base[i] for i in other_items])
         for item, frequency in self.item_frequency_.items():
-            self.freq_pattern_frequency_[tuple(item)] = frequency
+            self.freq_pattern_frequency_[tuple([item])] = frequency
 
 
 class Node:
